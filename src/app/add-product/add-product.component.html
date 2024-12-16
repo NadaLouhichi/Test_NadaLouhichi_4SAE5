@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit(productForm)" #productForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="product.name" required #name="ngModel">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="product.description" required #description="ngModel"></textarea>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="product.price" required min="0.01" #price="ngModel">
+    </div>
+    <div>
+      <label for="available">Available:</label>
+      <input type="checkbox" id="available" name="available" [(ngModel)]="product.available" #available="ngModel">
+    </div>
+    <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+  </form>
+  

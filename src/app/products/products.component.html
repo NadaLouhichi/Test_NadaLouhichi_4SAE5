@@ -1,0 +1,8 @@
+<div *ngFor="let product of products">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Prix: {{ product.price }}</p>
+    <p>Likes: {{ product.likes.length }}</p>
+    <button (click)="likeProduct(product.id)">Like</button>
+  </div>
+  
